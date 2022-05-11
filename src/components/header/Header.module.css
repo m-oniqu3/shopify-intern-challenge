@@ -1,0 +1,23 @@
+.header {
+  height: 10vh;
+  padding: 0 2rem;
+  background-color: var(--light-green);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  font-size: 1.3rem;
+  color: var(--green);
+}
+
+.header button {
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 4px 20px;
+  color: var(--light-grey);
+  background-color: var(--green);
+  border: none;
+  border-radius: 20px;
+}
