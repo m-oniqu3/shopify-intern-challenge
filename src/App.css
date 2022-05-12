@@ -1,0 +1,10 @@
+main {
+  padding: 2rem 0;
+  position: relative;
+  top: 10vh;
+  bottom: 10vh;
+  height: 80vh;
+  overflow-y: scroll;
+  width: 90%;
+  margin: 0 auto;
+}

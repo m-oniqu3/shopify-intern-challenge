@@ -1,0 +1,33 @@
+.form {
+  height: 10vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.form input {
+  padding: 6px 10px;
+  width: 65%;
+  border: 2px solid var(--green);
+  border-radius: 50px;
+  outline: none;
+}
+
+.form button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 50px;
+  color: var(--green);
+  background-color: var(--light-green);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.form button:hover {
+  color: var(--light-green);
+  background-color: var(--green);
+}
