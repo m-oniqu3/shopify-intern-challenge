@@ -18,9 +18,8 @@
 }
 
 .header button {
-  font-weight: 600;
   font-size: 1.1rem;
-  padding: 4px 20px;
+  padding: 4px 15px;
   color: var(--light-grey);
   background-color: var(--green);
   border: none;
