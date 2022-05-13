@@ -30,22 +30,25 @@
 
 .engine {
   background-color: var(--white);
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: 20px;
 
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   gap: 1rem;
   width: 90%;
   margin: 0 auto;
-  max-width: 400px;
+  max-width: 300px;
+  text-align: center;
 }
 
 .engine h2 {
   color: var(--green);
   font-size: 1.1rem;
+  padding-bottom: 1rem;
+  font-weight: 400;
 }
 
 .engine p {
@@ -54,4 +57,11 @@
   border: 2px solid var(--green);
   border-radius: 50px;
   width: fit-content;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.engine p:hover {
+  background-color: var(--green);
+  color: var(--white);
 }

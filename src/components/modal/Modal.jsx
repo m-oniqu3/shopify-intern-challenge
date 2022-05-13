@@ -2,18 +2,13 @@ import React, { useContext } from "react";
 import ReactDOM from "react-dom";
 import { SearchContext } from "../../contexts/SearchContext";
 import styled from "./Modal.module.css";
+import { engines } from "../../utility/Engines";
 
 const Modal = (props) => {
   const { setEngine } = useContext(SearchContext);
-  const engines = [
-    "text-davinci-002",
-    "text-curie-001",
-    "text-babbage-001",
-    "text-ada-001",
-  ];
 
   const handleEngine = (engine) => {
-    setEngine(engine);
+    setEngine(engine.name);
     props.setOpenModal(false);
   };
   // portal that selects the modal div in the dom
@@ -31,8 +26,8 @@ const Modal = (props) => {
         <article className={styled.engine}>
           <h2>Choose your preferred search engine</h2>
           {engines.map((engine) => (
-            <p key={engine} onClick={() => handleEngine(engine)}>
-              {engine}
+            <p key={engine.name} onClick={() => handleEngine(engine)}>
+              {engine.name}
             </p>
           ))}
         </article>
