@@ -7,12 +7,12 @@ const SearchContextProvider = (props) => {
   //states
   const [engine, setEngine] = useState(engines[1].name);
   const [engineValue, setEngineValue] = useState(engines[1].value);
+  const [prompt, setPrompt] = useState("");
 
   useEffect(() => {
     const selected = engines.find(
       (currentEngine) => currentEngine.name === engine
     );
-
     setEngineValue(selected.value);
   }, [engine]);
 
@@ -21,6 +21,8 @@ const SearchContextProvider = (props) => {
     engine,
     setEngine,
     engineValue,
+    prompt,
+    setPrompt,
   };
 
   return (
