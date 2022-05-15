@@ -41,3 +41,17 @@
   right: 0;
   color: var(--green);
 }
+
+/* Media Queries */
+
+@media (min-width: 768px) {
+  .prompt {
+    max-width: 400px;
+  }
+  .result {
+    max-width: 600px;
+  }
+  .response {
+    margin: 3rem 0;
+  }
+}
