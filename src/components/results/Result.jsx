@@ -1,23 +1,41 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useRef } from "react";
+import styled from "./Result.module.css";
 import { SearchContext } from "../../contexts/SearchContext";
 
 const Result = () => {
-  const { results, prompt, loading } = useContext(SearchContext);
+  const { results, copy, loading } = useContext(SearchContext);
+  const responseRef = useRef();
+
+  useEffect(() => {
+    if (results !== []) {
+      responseRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "start",
+      });
+    }
+  }, [results]);
 
   const responses = results.map((result) => {
     return (
-      <article key={result.time}>
-        <p>{result.prompt}</p>
+      <article key={result.time} className={styled.response}>
+        <p className={styled.prompt}>{result.prompt}</p>
 
-        {result.data ? <p>{result.data}</p> : "loading"}
+        {result.data ? (
+          <p className={styled.result} ref={responseRef}>
+            {result.data}
+          </p>
+        ) : (
+          "loading"
+        )}
       </article>
     );
   });
   return (
     <section>
-      <article>{responses}</article>
+      {responses}
       {/* if loading show the prompt */}
-      {loading && <p>{prompt}</p>}
+      {loading && <p>{copy[0]}</p>}
     </section>
   );
 };
