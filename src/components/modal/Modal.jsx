@@ -8,7 +8,7 @@ const Modal = (props) => {
   const { setEngine } = useContext(SearchContext);
 
   const handleEngine = (engine) => {
-    setEngine(engine.name);
+    setEngine(engine);
     props.setOpenModal(false);
   };
   // portal that selects the modal div in the dom
@@ -26,8 +26,8 @@ const Modal = (props) => {
         <article className={styled.engine}>
           <h2>Choose your preferred search engine</h2>
           {engines.map((engine) => (
-            <p key={engine.name} onClick={() => handleEngine(engine)}>
-              {engine.name}
+            <p key={engine} onClick={() => handleEngine(engine)}>
+              {engine}
             </p>
           ))}
         </article>

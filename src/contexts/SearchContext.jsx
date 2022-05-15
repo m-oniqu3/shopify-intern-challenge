@@ -1,29 +1,16 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useState } from "react";
 import { engines } from "../utility/Engines";
 
 export const SearchContext = createContext();
 
 const SearchContextProvider = (props) => {
   //states
-  const [engine, setEngine] = useState(engines[1].name);
-  const [engineValue, setEngineValue] = useState(engines[1].value);
+  const [engine, setEngine] = useState(engines[1]);
   const [prompt, setPrompt] = useState("");
-
-  useEffect(() => {
-    const selected = engines.find(
-      (currentEngine) => currentEngine.name === engine
-    );
-    setEngineValue(selected.value);
-  }, [engine]);
+  const [results, setResults] = useState([]);
 
   //object with values to share across all components
-  const values = {
-    engine,
-    setEngine,
-    engineValue,
-    prompt,
-    setPrompt,
-  };
+  const values = { engine, setEngine, prompt, setPrompt, results, setResults };
 
   return (
     <SearchContext.Provider value={values}>
