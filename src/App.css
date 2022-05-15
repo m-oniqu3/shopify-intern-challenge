@@ -6,6 +6,7 @@ main {
   height: 80vh;
   overflow-y: scroll;
   width: 90%;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -13,12 +14,8 @@ main {
   scrollbar-width: none; /* Firefox implementation */
 }
 
-/* ::-webkit-scrollbar {
-  width: 0;
-  background: transparent;
-
-}
-*/
 main::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
+  display: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none; /* Firefox */
 }
