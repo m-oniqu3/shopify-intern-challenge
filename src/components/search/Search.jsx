@@ -10,7 +10,7 @@ const Search = () => {
     setPrompt,
     setResults,
     setCopy,
-
+    loading,
     setLoading,
   } = useContext(SearchContext);
 
@@ -44,10 +44,12 @@ const Search = () => {
 
     //alert the user if the prompt submitted was empty
     prompt === "" && alert("Input cannot be empty");
+
+    // make a copy of the prompt
     setCopy((prev) => [prompt, ...prev]);
 
+    //call the function to fetch data from the api
     fetchData();
-    //window.scrollTo(0, document.body.scrollHeight);
     setPrompt("");
   };
 
@@ -59,7 +61,11 @@ const Search = () => {
         onChange={(e) => setPrompt(e.target.value)}
         value={prompt}
       />
-      <button type="submit">Submit</button>
+
+      {/* disable the button when loading */}
+      <button type="submit" disabled={loading}>
+        Submit
+      </button>
     </form>
   );
 };
