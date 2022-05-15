@@ -9,11 +9,16 @@ main {
   margin: 0 auto;
 }
 
-/* ::-webkit-scrollbar {
-  width: 0; 
-  background: transparent; 
-} */
+* {
+  scrollbar-width: none; /* Firefox implementation */
+}
 
+/* ::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+
+}
+*/
 main::-webkit-scrollbar {
   display: none; /* Safari and Chrome */
 }
