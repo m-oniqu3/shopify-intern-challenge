@@ -45,8 +45,10 @@ const Search = () => {
     //alert the user if the prompt submitted was empty
     prompt === "" && alert("Input cannot be empty");
     setCopy((prev) => [prompt, ...prev]);
+
     fetchData();
-    // setPrompt("");
+    //window.scrollTo(0, document.body.scrollHeight);
+    setPrompt("");
   };
 
   return (
