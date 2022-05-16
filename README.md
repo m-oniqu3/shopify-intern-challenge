@@ -1,4 +1,4 @@
-# Shopify Front End Developer Intern Challenge - Fall 2020
+# Shopify Front End Developer Intern Challenge - Fall 2022
 
 ## Fun with GPT-3
 
